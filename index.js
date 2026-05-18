@@ -1,9 +1,11 @@
 const express = require("express");
+const methodOverride = require('method-override')
 const app = express();
 
 app.set("view engine","ejs");
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 let notices = [
     {
@@ -24,11 +26,11 @@ let notices = [
 
 app.get("/notices",(req,res)=>{
     res.render("index",{notices});
-})
+});
 
 app.get("/notices/new",(req,res)=>{
     res.render("new");
-})
+});
 
 app.post("/notices",(req,res)=>{
     let {title,description,author,important}= req.body;
@@ -42,6 +44,34 @@ app.post("/notices",(req,res)=>{
         important: imp   
     }
     notices.push(data)
+    res.redirect("/notices");
+});
+
+app.get("/notices/:id",(req,res)=>{
+    let {id} = req.params;
+    let data = notices.find((e)=>e.id==id);
+    res.render("show",{data});
+});
+
+app.get("/notices/:id/edit",(req,res)=>{
+    let {id}= req.params;
+    let data = notices.find((e)=>e.id==id);
+    res.render("edit",{data});
+});
+
+app.put("/notices/:id",(req,res)=>{
+    let {title,author,description}=req.body;
+    let notice = notices.find((e)=>e.id==req.params.id);
+    notice.title= title;
+    notice.description=description;
+    notice.author=author;
+    res.redirect(`/notices/${notice.id}`);
+});
+
+app.delete("/notices/:id",(req,res)=>{
+    let notice = notices.find((e)=>e.id==req.params.id);
+    let idx= notices.indexOf(notice);
+    notices.splice(idx,1);
     res.redirect("/notices");
 })
 

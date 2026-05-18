@@ -9,12 +9,19 @@
     <H1>Notices</H1>
     <% for(let e of notices) { %>
         <ul>
-            <li><%= e.title %></li>
-            <li><%= e.description %></li>
-            <li><%= e.author %></li>
-            <li><%= e.important %></li>
+            <div>Title : <%= e.title %></div>
+            <div>Description : <%= e.description %></div>
+            <div>Author : <%= e.author %></div>
+            <div><%= e.important %></div>
         </ul>
+        <form action="/notices/<%=e.id%>">
+            <button>View</button>
+        </form>
     <% } %>
-    <a href="notices/new">New notices</a>
+    <br><br>
+    <div>
+       <a href="/notices/new">New notices</a> 
+    </div>
+    
 </body>
 </html>
