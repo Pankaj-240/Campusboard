@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Notices</title>
 </head>
 <body>
     <H1>Notices</H1>
     <% for(let e of notices) { %>
-        <ul>
+        <div class="box">
             <div>Title : <%= e.title %></div>
             <div>Description : <%= e.description %></div>
             <div>Author : <%= e.author %></div>
             <div><%= e.important %></div>
-        </ul>
-        <form action="/notices/<%=e.id%>">
+            <form action="/notices/<%=e.id%>">
             <button>View</button>
-        </form>
+            </form>
+        </div>
     <% } %>
-    <br><br>
     <div>
-       <a href="/notices/new">New notices</a> 
+       <a class="new" href="/notices/new">New notices</a> 
     </div>
     
 </body>
