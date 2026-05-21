@@ -11,6 +11,11 @@
         <h2>Title : <%= data.title %></h2>
         <p>Description : <%= data.description %></p>
         <p>Author : <strong><%= data.author %></strong></p>
+        <p>Important: <%=data.important ? "Yes" : "No" %>
+            <form action="/notices/<%=data.id%>/important?_method=PATCH" method="post">
+                <button>Swtich</button>
+            </form>
+        </p>
     </div>
         <a href="/notices/<%=data.id%>/edit">Edit</a>
         <form action="/notices/<%=data.id%>?_method=DELETE" method="post">

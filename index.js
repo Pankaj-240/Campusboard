@@ -36,7 +36,13 @@ app.get("/notices/new",(req,res)=>{
 
 app.post("/notices",(req,res)=>{
     let {title,description,author,important}= req.body;
-    let id = notices[notices.length-1].id +1;
+    let id;
+
+    if(notices.length === 0){
+        id = 1;
+    }else{
+        id = notices[notices.length - 1].id + 1;
+    }
     let imp = important ? true : false;
     let data={
         id: id,
@@ -70,6 +76,12 @@ app.put("/notices/:id",(req,res)=>{
     res.redirect(`/notices/${notice.id}`);
 });
 
+app.patch("/notices/:id/important",(req,res)=>{
+    let notice = notices.find((e)=>e.id==req.params.id);
+    notice.important =! notice.important;
+    res.redirect(`/notices/${req.params.id}`);
+})
+
 app.delete("/notices/:id",(req,res)=>{
     let notice = notices.find((e)=>e.id==req.params.id);
     let idx= notices.indexOf(notice);
@@ -80,5 +92,5 @@ app.delete("/notices/:id",(req,res)=>{
 let Port = process.env.PORT || 8000;
 
 app.listen(8000,()=>{
-    console.log("Listing at Port 8000...");
+    console.log(`Listing at Port ${Port}...`);
 });

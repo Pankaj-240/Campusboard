@@ -6,15 +6,16 @@
     <title>New</title>
 </head>
 <body>
+    <a href="/notices">Home</a>
     <form action="/notices" method="post" >
         <div>
-          <input type="text" name="title" placeholder="title">
+          <input type="text" name="title" placeholder="title" required>
         </div>
         <div>
-            <textarea name="description" placeholder="discription" rows="15" cols="40"></textarea>
+            <textarea name="description" placeholder="discription" rows="15" cols="40" required></textarea>
         </div>
         <div>
-            <input type="text" name="author" placeholder="name">
+            <input type="text" name="author" placeholder="name" required>
         </div>
        <div>
             <input type="checkbox" id="important" name="important">

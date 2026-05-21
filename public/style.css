@@ -12,19 +12,45 @@ h1{
     text-align: center;
 }
 .box{
-    height: 150px;
-    background-color: aqua;
+    height: 170px;
     display: flex;
     flex-direction: column;
+    justify-content:space-around;
     margin: 20px;
     border: 1px solid black;
     border-radius: 21px;
     padding: 10px;
     word-wrap:normal;
     overflow:auto;
-    gap: 13px;
+    form{
+        button{
+            border: none;
+            background-color: rgb(38, 140, 190) ;
+            padding: 5px;
+            background-color: rgb(38, 140, 190);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 5px;
+        }
+    }
 }
 
-.new{
-    margin: 20px;
+.new_notices_btn{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    a{
+        padding: 10px;
+        background-color: rgba(50, 94, 206, 0.836);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+        text-decoration:none;
+    }
 }

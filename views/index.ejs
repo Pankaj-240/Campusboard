@@ -10,17 +10,18 @@
     <H1>Notices</H1>
     <% for(let e of notices) { %>
         <div class="box">
-            <div>Title : <%= e.title %></div>
-            <div>Description : <%= e.description %></div>
-            <div>Author : <%= e.author %></div>
-            <div><%= e.important %></div>
-            <form action="/notices/<%=e.id%>">
+            <div><strong>Title : </strong><%= e.title %></div>
+            <div><strong>Description : </strong><%= e.description.length>100 ? e.description.slice(0,100)+"...": e.description  %>
+            </div>
+            <div><strong>Author : </strong><%= e.author %></div>
+            <div><strong>Important : </strong><%=e.important%></div>
+            <form action="/notices/<%=e.id%>"> 
             <button>View</button>
             </form>
         </div>
     <% } %>
-    <div>
-       <a class="new" href="/notices/new">New notices</a> 
+    <div class="new_notices_btn">
+       <a  href="/notices/new">New notices</a> 
     </div>
     
 </body>
