@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>New</title>
 </head>
 <body>
-    <a href="/notices">Home</a>
-    <form action="/notices" method="post" >
-        <div>
-          <input type="text" name="title" placeholder="title" required>
-        </div>
-        <div>
-            <textarea name="description" placeholder="discription" rows="15" cols="40" required></textarea>
-        </div>
-        <div>
-            <input type="text" name="author" placeholder="name" required>
-        </div>
-       <div>
-            <input type="checkbox" id="important" name="important">
-            <label for="important">Important</label>
-       </div>       
-        <button>Submit</button>
-    </form>
+    <div class="home_btn">
+        <a href="/notices">Home</a>        
+    </div>
+    <div class="outer_box">
+        <form action="/notices" method="post" class="edit_box">
+            <div>
+            <input type="text" name="title" placeholder="Title" required>
+            </div>
+            <div>
+                <textarea name="description" placeholder="Description" rows="15" cols="40" required></textarea>
+            </div>
+            <div>
+                <input type="text" name="author" placeholder="Author" required>
+            </div>
+            <div class="important">
+                <label for="important">Important</label>
+                <input type="checkbox" class="check" id="important" name="important">
+            </div>       
+            <button>Submit</button>
+        </form>        
+    </div>
+
 </body>
 </html>

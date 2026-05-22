@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
     <title>Single notice</title>
 </head>
 <body>
-    <a href="/notices">Home</a>
-    <div>
-        <h2>Title : <%= data.title %></h2>
-        <p>Description : <%= data.description %></p>
-        <p>Author : <strong><%= data.author %></strong></p>
-        <p>Important: <%=data.important ? "Yes" : "No" %>
-            <form action="/notices/<%=data.id%>/important?_method=PATCH" method="post">
-                <button>Swtich</button>
-            </form>
+
+<div class="home_btn">
+    <a href="/notices">Home</a>        
+</div>
+
+ <div class="box">
+    <div class="info" >
+        <h2><strong>Title : </strong><%= data.title %></h2>
+        <p><strong>Description : </strong><%= data.description %></p>
+        <p><strong>Author : </strong><%= data.author %></p>
+        <p><strong>Important: </strong><%=data.important ? "Yes" : "No" %>
         </p>
     </div>
-        <a href="/notices/<%=data.id%>/edit">Edit</a>
+    <div class="btns">
+
+        <form action="/notices/<%=data.id%>/important?_method=PATCH" method="post">
+            <button>Swtich</button>
+        </form>   
+
+        <form action="/notices/<%=data.id%>/edit" method="get">
+            <button>Edit</button>
+        </form>
+
         <form action="/notices/<%=data.id%>?_method=DELETE" method="post">
             <button>Delete</button>
-        </form>
+        </form>       
+    </div>    
+ </div>
+
 </body>
 </html>

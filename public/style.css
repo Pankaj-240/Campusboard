@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     height: 100vh;
@@ -12,14 +13,15 @@ h1{
     text-align: center;
 }
 .box{
-    height: 170px;
+    /* height: 170px; */
     display: flex;
     flex-direction: column;
     justify-content:space-around;
     margin: 20px;
     border: 1px solid black;
     border-radius: 21px;
-    padding: 10px;
+    padding: 20px;
+    gap: 15px;
     word-wrap:normal;
     overflow:auto;
     form{
@@ -52,5 +54,88 @@ h1{
         color: white;
         border-radius: 10px;
         text-decoration:none;
+    }
+}
+
+.home_btn{
+    height: 30px;
+    width: 60px;
+    background-color: rgb(83, 207, 228);
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    a{
+        color: rgb(61, 57, 57);
+        text-decoration: none;
+        font-weight: 500;
+    }
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btns{
+    display: flex;
+    justify-content:center;
+    gap: 20px;
+}
+
+.outer_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    .edit_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        gap: 20px;
+        div{
+            input[type="text"]{
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid black;
+                padding-left: 10px;
+            }
+            textarea{
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid black;
+                padding: 10px;
+            }
+
+        }
+            button{
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid black;
+                font-size:medium;
+            }
+    }
+}
+
+.important{
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    label{
+        padding-left: 10px ;
+    }
+    .check{
+        height: 20px;
     }
 }
