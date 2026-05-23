@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "author": "Pankaj",
+    "title": "Exam schedule changed",
+    "description": "The university has updated the end semester examination schedule. Exams for all departments will now start from July 10. Students are advised to check the official timetable regularly for any further updates.",
+    "important": true
+  },
+
+  {
+    "id": 2,
+    "author": "Lolan",
+    "title": "Exam form submission",
+    "description": "Students must fill and submit their end semester examination forms before May 20. Late submissions may include additional charges and could affect hall ticket generation.",
+    "important": false
+  },
+
+  {
+    "id": 3,
+    "author": "Admin",
+    "title": "Placement drive notice",
+    "description": "TCS campus placement registrations are now open for final year students. Interested candidates should upload their resumes and academic documents before the registration deadline.",
+    "important": true
+  },
+
+  {
+    "id": 4,
+    "author": "Coding Club",
+    "title": "Hackathon registration open",
+    "description": "The annual college hackathon registrations have started. Students can participate individually or in teams of up to four members. Winners will receive prizes and internship opportunities.",
+    "important": true
+  },
+
+  {
+    "id": 5,
+    "author": "Library Staff",
+    "title": "Library maintenance",
+    "description": "The central library will remain closed this Sunday due to maintenance and software upgrades. Students are requested to return issued books before Saturday evening.",
+    "important": false
+  }
+]

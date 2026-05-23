@@ -9,22 +9,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, "public")));
 
-let notices = [
-    {
-    id: 1,
-    author: "Pankaj",
-    title: "Exam schedule changed",
-    description: "End sem exams start from July 10",
-    important: false
-    },
-    {
-    id: 2,
-    author: "Lolan",
-    title: "Exam schedule form",
-    description: "End sem exams should be filled by may 20",
-    important: false
-    }
-]
+const notices = require("./data/data.json");
 
 app.get("/notices",(req,res)=>{
     res.render("index",{notices});
