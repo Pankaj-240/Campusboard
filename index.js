@@ -43,18 +43,21 @@ app.post("/notices",(req,res)=>{
 app.get("/notices/:id",(req,res)=>{
     let {id} = req.params;
     let data = notices.find((e)=>e.id==id);
+    if(!data) return res.status(404).send("Notice not found");
     res.render("show",{data});
 });
 
 app.get("/notices/:id/edit",(req,res)=>{
     let {id}= req.params;
     let data = notices.find((e)=>e.id==id);
+    if(!data) return res.status(404).send("Notice not found");
     res.render("edit",{data});
 });
 
 app.put("/notices/:id",(req,res)=>{
     let {title,author,description}=req.body;
     let notice = notices.find((e)=>e.id==req.params.id);
+    if(!notice) return res.status(404).send("Notice not found");
     notice.title= title;
     notice.description=description;
     notice.author=author;
@@ -63,12 +66,14 @@ app.put("/notices/:id",(req,res)=>{
 
 app.patch("/notices/:id/important",(req,res)=>{
     let notice = notices.find((e)=>e.id==req.params.id);
+    if(!notice) return res.status(404).send("Notice not found");
     notice.important =! notice.important;
     res.redirect(`/notices/${req.params.id}`);
 })
 
 app.delete("/notices/:id",(req,res)=>{
     let notice = notices.find((e)=>e.id==req.params.id);
+    if(!notice) return res.status(404).send("Notice not found");
     let idx= notices.indexOf(notice);
     notices.splice(idx,1);
     res.redirect("/notices");
@@ -76,6 +81,7 @@ app.delete("/notices/:id",(req,res)=>{
 
 let Port = process.env.PORT || 8000;
 
-app.listen(8000,()=>{
+app.listen(Port,()=>{
     console.log(`Listing at Port ${Port}...`);
+    console.log(`http://localhost:${Port}/notices`)
 });
