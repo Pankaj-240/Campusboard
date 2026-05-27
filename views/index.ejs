@@ -14,9 +14,9 @@
             <div><strong>Description : </strong><%= e.description.length>100 ? e.description.slice(0,100)+"...": e.description  %>
             </div>
             <div><strong>Author : </strong><%= e.author %></div>
-            <div><strong>Important : </strong><%=e.important%></div>
+            <div class="imp"> <%=e.important ? "Important" : ""%></div>
             <form action="/notices/<%=e.id%>"> 
-            <button>View</button>
+            <button><pre> View </pre></button>
             </form>
         </div>
     <% } %>

@@ -24,6 +24,7 @@ h1{
     padding: 20px;
     gap: 15px;
     line-height: 1.4;
+    position: relative;
     form{
         button{
             border: none;
@@ -35,6 +36,16 @@ h1{
             color: white;
             border-radius: 5px;
         }
+    }
+    .imp{
+        background-color: rgba(173, 67, 67, 0.719);
+        color: white;
+        padding: 0 5px;
+        border-radius: 10px;
+        position:absolute;
+        top: 10px;
+        right: 10px;
+
     }
 }
 
@@ -76,6 +87,12 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 10px;
+    .check{
+        display: flex;
+        justify-content: start;
+        gap: 5px;
+    }
 }
 
 .btns{

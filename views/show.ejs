@@ -17,21 +17,36 @@
         <h2><strong>Title : </strong><%= data.title %></h2>
         <p><strong>Description : </strong><%= data.description %></p>
         <p><strong>Author : </strong><%= data.author %></p>
-        <p><strong>Important: </strong><%=data.important ? "Yes" : "No" %>
-        </p>
+        <div>
+        <form  
+            class="check"
+            action="/notices/<%=data.id%>/important?_method=PATCH" method="post"
+            >
+                <label for="check"><strong>Important: </strong></label>
+                <input 
+                    type="checkbox" 
+                    name="important"
+                    id="check"
+                    onclick="this.form.submit()"
+                    <%= data.important ? "checked" : "" %>
+                >
+            </form>
+        </div>
     </div>
+    
+    <div class="imp"> <%=data.important ? "Important" : ""%></div>
+
     <div class="btns">
 
-        <form action="/notices/<%=data.id%>/important?_method=PATCH" method="post">
-            <button>Swtich</button>
-        </form>   
+         
+        
 
         <form action="/notices/<%=data.id%>/edit" method="get">
-            <button>Edit</button>
+            <button><pre> Edit </pre></button>
         </form>
 
         <form action="/notices/<%=data.id%>?_method=DELETE" method="post">
-            <button>Delete</button>
+            <button><pre> Delete </pre></button>
         </form>       
     </div>    
  </div>

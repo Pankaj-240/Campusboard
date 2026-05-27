@@ -53,5 +53,5 @@ MongoDB integration planned as next step.
 ## Screenshots
 ![Notices](images/notices.png)
 ![View](images/view.png)
-![New](images/new.png)
 ![Edit](images/edit.png)
+![New](images/new.png)
